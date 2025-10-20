@@ -1,0 +1,244 @@
+<section id="view_item" class="min-h-screen bg-black">
+  <div class="mx-auto max-w-7xl px-6 py-10 md:px-8">
+    <!-- Breadcrumbs -->
+    <nav class="mb-6 text-sm text-zinc-400">
+      <a href="#jerseys" class="hover:text-purple-400">Jerseys</a>
+      <span class="mx-2 text-zinc-600">/</span>
+      <a href="#jerseys" class="hover:text-purple-400">LeBron</a>
+      <span class="mx-2 text-zinc-600">/</span>
+      <span class="font-semibold text-white">LeBron Statement Jersey — LA #23</span>
+    </nav>
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_1fr]">
+      <!-- Gallery (sticky left) -->
+      <div class="lg:sticky lg:top-24">
+        <div class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40 p-4 ring-1 ring-transparent">
+          <img id="mainImage"
+               src="./static/jersey-lakers-23.png"
+               alt="LeBron Statement Jersey — LA #23"
+               class="mx-auto h-[460px] w-full object-contain" />
+          <span class="absolute left-5 top-5 rounded-full bg-purple-600 px-3 py-1 text-xs font-semibold text-white shadow-sm">New</span>
+        </div>
+
+        <!-- Thumbnails (scrollable on mobile) -->
+        <div class="mt-4 grid grid-cols-4 gap-3 overflow-x-auto">
+          <button data-src="./static/jersey-lakers-23.png"
+                  class="thumb group overflow-hidden rounded-2xl border border-zinc-800 bg-black p-2 hover:border-zinc-700">
+            <img src="./static/jersey-lakers-23.png"
+                 class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+          </button>
+          <button data-src="./static/jersey-lakers-23-back.png"
+                  class="thumb group overflow-hidden rounded-2xl border border-zinc-800 bg-black p-2 hover:border-zinc-700">
+            <img src="./static/jersey-lakers-23-back.png"
+                 class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+          </button>
+          <button data-src="./static/jersey-detail-neck.png"
+                  class="thumb group overflow-hidden rounded-2xl border border-zinc-800 bg-black p-2 hover:border-zinc-700">
+            <img src="./static/jersey-detail-neck.png"
+                 class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+          </button>
+          <button data-src="./static/jersey-detail-fabric.png"
+                  class="thumb group overflow-hidden rounded-2xl border border-zinc-800 bg-black p-2 hover:border-zinc-700">
+            <img src="./static/jersey-detail-fabric.png"
+                 class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+          </button>
+        </div>
+      </div>
+
+      <!-- Details (right side) -->
+      <aside class="flex flex-col gap-6">
+        <!-- Title + price -->
+        <div class="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
+          <div class="flex items-start justify-between gap-6">
+            <div>
+              <h1 class="text-2xl md:text-3xl font-extrabold text-white">LeBron Statement Jersey — LA #23</h1>
+              <p class="mt-1 text-zinc-400">Men’s Basketball Jersey</p>
+              <div class="mt-2 flex items-center gap-3 text-sm">
+                <div class="flex items-center gap-0.5 text-yellow-400" aria-label="4.8 out of 5 stars">
+                  ★★★★☆
+                </div>
+                <span class="text-zinc-500">(284 reviews)</span>
+              </div>
+            </div>
+            <button aria-label="Add to Wishlist"
+              class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm font-semibold text-zinc-200 hover:border-zinc-700">
+              ♥
+            </button>
+          </div>
+
+          <div class="mt-4 flex items-baseline gap-3">
+            <p class="text-3xl font-extrabold text-white">$149.99</p>
+            <span class="rounded-full bg-purple-600/15 px-2 py-0.5 text-xs font-semibold text-purple-300 ring-1 ring-purple-800/40">Free Shipping</span>
+          </div>
+        </div>
+
+        <!-- Color & Size -->
+        <div class="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
+          <!-- Colors -->
+          <div>
+            <p class="mb-2 text-sm font-medium text-zinc-300">Color</p>
+            <div id="colorGroup" class="flex flex-wrap gap-2">
+              <button data-color="Lakers Purple" title="Lakers Purple"
+                      class="h-9 w-9 rounded-full border-2 border-transparent bg-purple-600 ring-2 ring-purple-600/40 hover:ring-purple-600"></button>
+              <button data-color="Black" title="Black"
+                      class="h-9 w-9 rounded-full border-2 border-transparent bg-black ring-2 ring-zinc-700 hover:ring-zinc-600"></button>
+              <button data-color="City White" title="City White"
+                      class="h-9 w-9 rounded-full border-2 border-zinc-700 bg-zinc-100 ring-2 ring-zinc-700 hover:ring-zinc-600"></button>
+            </div>
+          </div>
+
+          <!-- Sizes -->
+          <div class="mt-6">
+            <div class="mb-2 flex items-center justify-between">
+              <p class="text-sm font-medium text-zinc-300">Size (EU)</p>
+              <a href="#size-guide" class="text-xs font-semibold text-purple-400 hover:underline">Size guide</a>
+            </div>
+            <div id="sizeGroup" class="grid grid-cols-5 gap-2">
+              <button class="rounded-xl border border-zinc-800 bg-black px-0 py-2 text-sm font-semibold text-zinc-200 hover:border-zinc-700">S</button>
+              <button class="rounded-xl border border-zinc-800 bg-black px-0 py-2 text-sm font-semibold text-zinc-200 hover:border-zinc-700">M</button>
+              <button class="rounded-xl border border-zinc-800 bg-black px-0 py-2 text-sm font-semibold text-zinc-200 hover:border-zinc-700">L</button>
+              <button class="rounded-xl border border-zinc-800 bg-black px-0 py-2 text-sm font-semibold text-zinc-200 hover:border-zinc-700">XL</button>
+              <button class="rounded-xl border border-zinc-800 bg-black px-0 py-2 text-sm font-semibold text-zinc-200 hover:border-zinc-700">XXL</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quantity + CTAs -->
+        <div class="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="flex items-center rounded-xl border border-zinc-800 bg-black">
+              <button class="h-11 w-11 rounded-l-xl text-lg hover:bg-zinc-900">−</button>
+              <input type="number" min="1" value="1" class="h-11 w-14 border-x border-zinc-800 bg-black text-center text-white outline-none" />
+              <button class="h-11 w-11 rounded-r-xl text-lg hover:bg-zinc-900">+</button>
+            </div>
+            <button
+              class="inline-flex h-11 flex-1 items-center justify-center rounded-2xl bg-purple-600 px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-purple-800/20 transition hover:bg-purple-700 active:scale-[0.98]">
+              Add to Cart
+            </button>
+            <button
+              class="inline-flex h-11 flex-1 items-center justify-center rounded-2xl border border-zinc-800 bg-black px-6 text-sm font-semibold text-zinc-100 transition hover:border-zinc-700 hover:shadow-sm">
+              Buy Now
+            </button>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="mt-4 flex flex-wrap items-center gap-2">
+            <span class="rounded-full bg-zinc-800 px-2.5 py-1 text-xs font-medium text-zinc-300">30-day returns</span>
+            <span class="rounded-full bg-zinc-800 px-2.5 py-1 text-xs font-medium text-zinc-300">2-year warranty</span>
+            <span class="rounded-full bg-zinc-800 px-2.5 py-1 text-xs font-medium text-zinc-300">Carbon neutral shipping</span>
+          </div>
+        </div>
+
+        <!-- Feature callouts -->
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4">
+            <p class="text-sm font-semibold text-white">Pro Fabric</p>
+            <p class="mt-1 text-sm text-zinc-400">Lightweight mesh with heat-applied name & number for reduced bulk.</p>
+          </div>
+          <div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4">
+            <p class="text-sm font-semibold text-white">Game-Day Cut</p>
+            <p class="mt-1 text-sm text-zinc-400">Athletic fit with room to move and layer over base tops.</p>
+          </div>
+          <div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4">
+            <p class="text-sm font-semibold text-white">Breathable Zones</p>
+            <p class="mt-1 text-sm text-zinc-400">Targeted ventilation mapped to high-heat areas.</p>
+          </div>
+        </div>
+
+        <!-- Accordions (dark) -->
+        <div class="overflow-hidden rounded-3xl border border-zinc-800">
+          <details class="group p-5 open:bg-zinc-900/40">
+            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-white">
+              Description
+              <span class="ml-2 text-zinc-500 group-open:rotate-180 transition">⌃</span>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-300">
+              The LeBron Statement Jersey pairs pro-grade details with breathable performance fabric. Designed for
+              full-court intensity and everyday style.
+            </p>
+          </details>
+          <div class="h-px bg-zinc-800"></div>
+          <details class="group p-5 open:bg-zinc-900/40">
+            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-white">
+              Shipping & Returns
+              <span class="ml-2 text-zinc-500 group-open:rotate-180 transition">⌃</span>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-300">
+              Free standard shipping. Returns accepted within 30 days in new condition. Some exclusions apply.
+            </p>
+          </details>
+          <div class="h-px bg-zinc-800"></div>
+          <details class="group p-5 open:bg-zinc-900/40">
+            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-white">
+              Materials & Care
+              <span class="ml-2 text-zinc-500 group-open:rotate-180 transition">⌃</span>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-zinc-300">
+              Body: 100% polyester mesh. Trim: heat-applied. Machine wash cold inside-out. Line dry.
+            </p>
+          </details>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Related (LeBron theme) -->
+    <div class="mt-14">
+      <h2 class="mb-4 text-xl font-extrabold text-white">You might also like</h2>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+          <img src="./static/jersey-miami-6.png"
+               class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+          <div class="mt-3">
+            <p class="text-sm font-semibold text-white">LeBron City Edition — Miami #6</p>
+            <p class="text-sm text-zinc-400">$169.99</p>
+          </div>
+          <a href="#view_item" class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-800 bg-black text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+            View
+          </a>
+        </article>
+
+        <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+          <img src="./static/jersey-cavs-23.png"
+               class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+          <div class="mt-3">
+            <p class="text-sm font-semibold text-white">LeBron Icon — Cleveland #23</p>
+            <p class="text-sm text-zinc-400">$159.99</p>
+          </div>
+          <a href="#view_item" class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-800 bg-black text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+            View
+          </a>
+        </article>
+
+        <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+          <img src="./static/lebron-basketball.png"
+               class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+          <div class="mt-3">
+            <p class="text-sm font-semibold text-white">LeBron Signature Basketball</p>
+            <p class="text-sm text-zinc-400">$59.99</p>
+          </div>
+          <a href="#view_item" class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-800 bg-black text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+            View
+          </a>
+        </article>
+
+        <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+          <img src="./static/lebron-apparel.png"
+               class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
+          <div class="mt-3">
+            <p class="text-sm font-semibold text-white">LeBron Warm-Up Hoodie</p>
+            <p class="text-sm text-zinc-400">$89.99</p>
+          </div>
+          <a href="#view_item" class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-800 bg-black text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+            View
+          </a>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="itemToast"
+       class="pointer-events-none fixed inset-x-0 bottom-6 z-50 mx-auto hidden w-fit rounded-xl border border-zinc-800 bg-zinc-900/90 px-4 py-3 text-sm text-white shadow-md">
+    Added to cart
+  </div>
+</section>
