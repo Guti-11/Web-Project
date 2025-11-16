@@ -1,8 +1,7 @@
 <section id="view_shop" class="min-h-screen bg-black text-white">
   <!-- HERO -->
   <div class="relative">
-    <img src="./static/lebron-hero-wide.jpg" alt="LeBron collection hero"
-         class="h-[46vh] w-full object-cover">
+    <img src="./static/lebron-hero-wide.jpg" alt="LeBron collection hero" class="h-[46vh] w-full object-cover">
     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
     <div class="absolute inset-x-0 bottom-8 mx-auto max-w-7xl px-6 md:px-8">
       <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">LeBron Collection</h1>
@@ -17,18 +16,29 @@
     <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
       <div class="flex flex-wrap items-center gap-2">
         <span class="text-xs font-semibold uppercase tracking-wider text-zinc-500">Quick filters</span>
-        <button class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700">All</button>
-        <button class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700">Jerseys</button>
-        <button class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700">Basketballs</button>
-        <button class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700">Apparel</button>
-        <button class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700">Accessories</button>
-        <button class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700">New</button>
+        <button
+          class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700"
+          onclick=ProductService.GetLebronProducts()>All</button>
+        <button
+          class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700"
+          onclick="ProductService.GetProductByCategory('Jerseys')">Jerseys</button>
+        <button
+          class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700"
+          onclick="ProductService.GetProductByCategory('Basketballs')">Basketballs</button>
+        <button
+          class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700"
+          onclick="ProductService.GetProductByCategory('Apparel')">Apparel</button>
+        <button
+          class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700"
+          onclick="ProductService.GetProductByCategory('Accessories ')">Accessories</button>
+        <button
+          class="rounded-full border border-zinc-800 bg-black px-3 py-1.5 text-sm text-zinc-200 hover:border-zinc-700">New</button>
       </div>
 
       <div class="flex items-center gap-2">
         <label for="shop-sort" class="text-sm text-zinc-300">Sort by</label>
         <select id="shop-sort"
-                class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:ring-2 focus:ring-purple-600/30">
+          class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:ring-2 focus:ring-purple-600/30">
           <option value="featured">Featured</option>
           <option value="new">Newest</option>
           <option value="price-low">Price: Low to High</option>
@@ -41,36 +51,25 @@
     <div class="mb-6 flex flex-wrap gap-2">
       <span class="rounded-lg border border-zinc-800 bg-zinc-900/40 px-2.5 py-1 text-xs text-zinc-300">LeBron</span>
       <span class="rounded-lg border border-zinc-800 bg-zinc-900/40 px-2.5 py-1 text-xs text-zinc-300">Statement</span>
-      <span class="rounded-lg border border-zinc-800 bg-zinc-900/40 px-2.5 py-1 text-xs text-zinc-300">City Edition</span>
-      <span class="rounded-lg border border-zinc-800 bg-zinc-900/40 px-2.5 py-1 text-xs text-zinc-300">Performance</span>
+      <span class="rounded-lg border border-zinc-800 bg-zinc-900/40 px-2.5 py-1 text-xs text-zinc-300">City
+        Edition</span>
+      <span
+        class="rounded-lg border border-zinc-800 bg-zinc-900/40 px-2.5 py-1 text-xs text-zinc-300">Performance</span>
       <span class="rounded-lg border border-zinc-800 bg-zinc-900/40 px-2.5 py-1 text-xs text-zinc-300">Lifestyle</span>
     </div>
 
     <!-- GRID -->
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" id="lebron-merch">
       <!-- JERSEYS -->
-      <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
-        <div class="relative">
-          <span class="absolute left-3 top-3 rounded-full bg-purple-600 px-2.5 py-1 text-xs font-semibold text-white">New</span>
-          <img src="https://www.hoopsheaven.com.au/cdn/shop/files/AURORA_DO9530-508_PHSFH001-2000_3024x.png?v=1693381566" alt="LeBron Statement Jersey — LA #23"
-               class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
-        </div>
-        <div class="mt-4">
-          <h3 class="text-sm font-semibold">LeBron Statement Jersey — LA #23</h3>
-          <p class="mt-1 text-sm text-zinc-400">Men’s Basketball Jersey</p>
-          <p class="mt-2 text-base font-bold">$149.99</p>
-        </div>
-        <a href="#view_item"
-           class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
-          View
-        </a>
-      </article>
 
-      <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+
+      <article
+        class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
         <div class="relative">
-          <span class="absolute left-3 top-3 rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold text-white ring-1 ring-zinc-600/40">Limited</span>
+          <span
+            class="absolute left-3 top-3 rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold text-white ring-1 ring-zinc-600/40">Limited</span>
           <img src="./static/lakers6.png" alt="LeBron City Edition — Miami #6"
-               class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
+            class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
         </div>
         <div class="mt-4">
           <h3 class="text-sm font-semibold">LeBron City Edition — Miami #6</h3>
@@ -78,15 +77,16 @@
           <p class="mt-2 text-base font-bold">$169.99</p>
         </div>
         <a href="#view_item"
-           class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+          class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
           View
         </a>
       </article>
 
-      <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+      <article
+        class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
         <div class="relative">d
           <img src="./static/23background" alt="LeBron Icon — Clevelansdd #23"
-               class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
+            class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
         </div>
         <div class="mt-4">
           <h3 class="text-sm font-semibold">LeBron Icon — Cleveland #23</h3>
@@ -94,17 +94,19 @@
           <p class="mt-2 text-base font-bold">$159.99</p>
         </div>
         <a href="#view_item"
-           class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+          class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
           View
         </a>
       </article>
 
       <!-- BASKETBALLS -->
-      <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+      <article
+        class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
         <div class="relative">
-          <span class="absolute left-3 top-3 rounded-full bg-purple-600 px-2.5 py-1 text-xs font-semibold text-white">Pro</span>
+          <span
+            class="absolute left-3 top-3 rounded-full bg-purple-600 px-2.5 py-1 text-xs font-semibold text-white">Pro</span>
           <img src="./static/lebron-basketball.png" alt="LeBron Signature Basketball"
-               class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
+            class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
         </div>
         <div class="mt-4">
           <h3 class="text-sm font-semibold">LeBron Signature Basketball</h3>
@@ -112,16 +114,17 @@
           <p class="mt-2 text-base font-bold">$59.99</p>
         </div>
         <a href="#view_item"
-           class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+          class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
           View
         </a>
       </article>
 
       <!-- APPAREL -->
-      <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+      <article
+        class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
         <div class="relative">
           <img src="./static/lebron-apparel.png" alt="LeBron Warm-Up Hoodie"
-               class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
+            class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
         </div>
         <div class="mt-4">
           <h3 class="text-sm font-semibold">LeBron Warm-Up Hoodie</h3>
@@ -129,15 +132,16 @@
           <p class="mt-2 text-base font-bold">$89.99</p>
         </div>
         <a href="#view_item"
-           class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+          class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
           View
         </a>
       </article>
 
-      <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+      <article
+        class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
         <div class="relative">
           <img src="./static/lebron-tee.png" alt="LeBron Performance Tee"
-               class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
+            class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
         </div>
         <div class="mt-4">
           <h3 class="text-sm font-semibold">LeBron Performance Tee</h3>
@@ -145,16 +149,17 @@
           <p class="mt-2 text-base font-bold">$39.99</p>
         </div>
         <a href="#view_item"
-           class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+          class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
           View
         </a>
       </article>
 
       <!-- ACCESSORIES -->
-      <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+      <article
+        class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
         <div class="relative">
           <img src="./static/lebron-headband.png" alt="LeBron Crown Headband"
-               class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
+            class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
         </div>
         <div class="mt-4">
           <h3 class="text-sm font-semibold">LeBron Crown Headband</h3>
@@ -162,15 +167,16 @@
           <p class="mt-2 text-base font-bold">$14.99</p>
         </div>
         <a href="#view_item"
-           class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+          class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
           View
         </a>
       </article>
 
-      <article class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
+      <article
+        class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
         <div class="relative">
           <img src="./static/lebron-socks.png" alt="LeBron Court Socks (2-pack)"
-               class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
+            class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
         </div>
         <div class="mt-4">
           <h3 class="text-sm font-semibold">LeBron Court Socks (2-pack)</h3>
@@ -178,21 +184,22 @@
           <p class="mt-2 text-base font-bold">$19.99</p>
         </div>
         <a href="#view_item"
-           class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+          class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
           View
         </a>
       </article>
     </div>
 
     <!-- CTA STRIP -->
-    <div class="mt-12 overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-r from-purple-600 to-purple-700 p-8 text-white shadow-soft">
+    <div
+      class="mt-12 overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-r from-purple-600 to-purple-700 p-8 text-white shadow-soft">
       <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
         <div>
           <h3 class="text-2xl md:text-3xl font-bold">Join for early LeBron drops</h3>
           <p class="mt-1 text-white/90">Members get first access to limited colorways and restocks.</p>
         </div>
         <a href="#view_signup"
-           class="inline-flex h-12 items-center justify-center rounded-2xl bg-white px-6 font-semibold text-purple-700 hover:bg-zinc-100">
+          class="inline-flex h-12 items-center justify-center rounded-2xl bg-white px-6 font-semibold text-purple-700 hover:bg-zinc-100">
           Create account
         </a>
       </div>
@@ -200,11 +207,16 @@
 
     <!-- PAGINATION (static) -->
     <nav class="mt-10 flex items-center justify-center gap-2" aria-label="Pagination">
-      <a href="#" class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-200 hover:border-zinc-700">Prev</a>
-      <a href="#" class="rounded-xl border border-zinc-800 bg-purple-600 px-3 py-2 text-sm font-semibold text-white">1</a>
-      <a href="#" class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-200 hover:border-zinc-700">2</a>
-      <a href="#" class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-200 hover:border-zinc-700">3</a>
-      <a href="#" class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-200 hover:border-zinc-700">Next</a>
+      <a href="#"
+        class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-200 hover:border-zinc-700">Prev</a>
+      <a href="#"
+        class="rounded-xl border border-zinc-800 bg-purple-600 px-3 py-2 text-sm font-semibold text-white">1</a>
+      <a href="#"
+        class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-200 hover:border-zinc-700">2</a>
+      <a href="#"
+        class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-200 hover:border-zinc-700">3</a>
+      <a href="#"
+        class="rounded-xl border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-200 hover:border-zinc-700">Next</a>
     </nav>
   </div>
 </section>
