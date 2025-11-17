@@ -1,58 +1,31 @@
-<section id="view_item" class="min-h-screen bg-black">
-  <div class="mx-auto max-w-7xl px-6 py-10 md:px-8">
-    <!-- Breadcrumbs -->
-    <nav class="mb-6 text-sm text-zinc-400">
-      <a href="#jerseys" class="hover:text-purple-400">Jerseys</a>
-      <span class="mx-2 text-zinc-600">/</span>
-      <a href="#jerseys" class="hover:text-purple-400">LeBron</a>
-      <span class="mx-2 text-zinc-600">/</span>
-      <span class="font-semibold text-white">LeBron Statement Jersey — LA #23</span>
-    </nav>
+let ProductService = {
 
-    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_1fr]">
-      <!-- Gallery (sticky left) -->
-      <div class="lg:sticky lg:top-24">
-        <div
-          class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40 p-4 ring-1 ring-transparent">
-          <img id="mainImage" src="./static/jersey-lakers-23.png" alt="LeBron Statement Jersey — LA #23"
-            class="mx-auto h-[460px] w-full object-contain" />
-          <span
-            class="absolute left-5 top-5 rounded-full bg-purple-600 px-3 py-1 text-xs font-semibold text-white shadow-sm">New</span>
-        </div>
 
-        <!-- Thumbnails (scrollable on mobile) -->
-        <div class="mt-4 grid grid-cols-4 gap-3 overflow-x-auto">
-          <button data-src="./static/jersey-lakers-23.png"
-            class="thumb group overflow-hidden rounded-2xl border border-zinc-800 bg-black p-2 hover:border-zinc-700">
-            <img src="./static/jersey-lakers-23.png"
-              class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
-          </button>
-          <button data-src="./static/jersey-lakers-23-back.png"
-            class="thumb group overflow-hidden rounded-2xl border border-zinc-800 bg-black p-2 hover:border-zinc-700">
-            <img src="./static/jersey-lakers-23-back.png"
-              class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
-          </button>
-          <button data-src="./static/jersey-detail-neck.png"
-            class="thumb group overflow-hidden rounded-2xl border border-zinc-800 bg-black p-2 hover:border-zinc-700">
-            <img src="./static/jersey-detail-neck.png"
-              class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
-          </button>
-          <button data-src="./static/jersey-detail-fabric.png"
-            class="thumb group overflow-hidden rounded-2xl border border-zinc-800 bg-black p-2 hover:border-zinc-700">
-            <img src="./static/jersey-detail-fabric.png"
-              class="h-20 w-full object-contain transition group-hover:scale-[1.03]" alt="">
-          </button>
-        </div>
-      </div>
 
-      <!-- Details (right side) -->
-      <aside class="flex flex-col gap-6" id="itemview">
+
+
+  GetProductById: function (id) {
+    fetch(`http://localhost/Web-Project/backend/products/product/${id}`)
+      .then((res) => {
+
+
+        return res.json();
+      })
+      .then((item) => {
+
+        const itemview = document.getElementById('itemview');
+
+        itemview.innerHTML = "";
+
+        itemview.innerHTML +=
+          `
         <!-- Title + price -->
         <div class="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
           <div class="flex items-start justify-between gap-6">
             <div>
-              <h1 class="text-2xl md:text-3xl font-extrabold text-white">LeBron Statement Jersey — LA #23</h1>
-              <p class="mt-1 text-zinc-400">Men’s Basketball Jersey</p>
+              <h1 class="text-2xl md:text-3xl font-extrabold text-white">
+              ${item.name}</h1>
+              <p class="mt-1 text-zinc-400">${item.category_name}</p>
               <div class="mt-2 flex items-center gap-3 text-sm">
                 <div class="flex items-center gap-0.5 text-yellow-400" aria-label="4.8 out of 5 stars">
                   ★★★★☆
@@ -67,7 +40,7 @@
           </div>
 
           <div class="mt-4 flex items-baseline gap-3">
-            <p class="text-3xl font-extrabold text-white">$149.99</p>
+            <p class="text-3xl font-extrabold text-white">$${item.price}</p>
             <span
               class="rounded-full bg-purple-600/15 px-2 py-0.5 text-xs font-semibold text-purple-300 ring-1 ring-purple-800/40">Free
               Shipping</span>
@@ -187,75 +160,94 @@
             </p>
           </details>
         </div>
-      </aside>
-    </div>
 
-    <!-- Related (LeBron theme) -->
-    <div class="mt-14">
-      <h2 class="mb-4 text-xl font-extrabold text-white">You might also like</h2>
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <article
-          class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
-          <img src="./static/jersey-miami-6.png"
-            class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
-          <div class="mt-3">
-            <p class="text-sm font-semibold text-white">LeBron City Edition — Miami #6</p>
-            <p class="text-sm text-zinc-400">$169.99</p>
-          </div>
-          <a href="#view_item"
-            class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-800 bg-black text-sm font-semibold text-zinc-100 hover:border-zinc-700">
-            View
-          </a>
-        </article>
+        `
+        console.log(data);
+      })
 
-        <article
-          class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
-          <img src="./static/jersey-cavs-23.png"
-            class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
-          <div class="mt-3">
-            <p class="text-sm font-semibold text-white">LeBron Icon — Cleveland #23</p>
-            <p class="text-sm text-zinc-400">$159.99</p>
-          </div>
-          <a href="#view_item"
-            class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-800 bg-black text-sm font-semibold text-zinc-100 hover:border-zinc-700">
-            View
-          </a>
-        </article>
+  },
 
-        <article
-          class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
-          <img src="./static/lebron-basketball.png"
-            class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
-          <div class="mt-3">
-            <p class="text-sm font-semibold text-white">LeBron Signature Basketball</p>
-            <p class="text-sm text-zinc-400">$59.99</p>
-          </div>
-          <a href="#view_item"
-            class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-800 bg-black text-sm font-semibold text-zinc-100 hover:border-zinc-700">
-            View
-          </a>
-        </article>
+  GetProductByCategory: function (categoryname) {
+    fetch(`http://localhost/Web-Project/backend/category/${categoryname}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
 
-        <article
-          class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700">
-          <img src="./static/lebron-apparel.png"
-            class="mx-auto h-40 w-full object-contain transition group-hover:scale-[1.03]" alt="">
-          <div class="mt-3">
-            <p class="text-sm font-semibold text-white">LeBron Warm-Up Hoodie</p>
-            <p class="text-sm text-zinc-400">$89.99</p>
-          </div>
-          <a href="#view_item"
-            class="mt-3 inline-flex h-10 w-full items-center justify-center rounded-xl border border-zinc-800 bg-black text-sm font-semibold text-zinc-100 hover:border-zinc-700">
-            View
-          </a>
-        </article>
-      </div>
-    </div>
-  </div>
+        const lebronmerch = document.getElementById('lebron-merch');
 
-  <!-- Toast -->
-  <div id="itemToast"
-    class="pointer-events-none fixed inset-x-0 bottom-6 z-50 mx-auto hidden w-fit rounded-xl border border-zinc-800 bg-zinc-900/90 px-4 py-3 text-sm text-white shadow-md">
-    Added to cart
-  </div>
-</section>
+        lebronmerch.innerHTML = "";
+
+        for (let item of data) {
+          lebronmerch.innerHTML += `
+                      <article
+        class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700"
+        onclick="ProductService.GetProductById(${item.id})"
+        >
+        <div class="relative">
+          <span
+            class="absolute left-3 top-3 rounded-full bg-purple-600 px-2.5 py-1 text-xs font-semibold text-white">New</span>
+          <img
+            src="https://www.hoopsheaven.com.au/cdn/shop/files/AURORA_DO9530-508_PHSFH001-2000_3024x.png?v=1693381566"
+            alt="LeBron Statement Jersey — LA #23"
+            class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
+        </div>
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">${item.name}</h3>
+          <p class="mt-1 text-sm text-zinc-400">${item.category_name}</p>
+          <p class="mt-2 text-base font-bold">$${item.price}</p>
+        </div>
+        <a href="#view_item"
+          class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+          View
+        </a>
+      </article>
+                    `
+        }
+      })
+  }
+  ,
+  GetLebronProducts: function () {
+
+    fetch("http://localhost/Web-Project/backend/products")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+
+
+        const lebronmerch = document.getElementById('lebron-merch');
+
+        lebronmerch.innerHTML = "";
+
+        for (let item of data) {
+          lebronmerch.innerHTML += `
+                      <article
+        class="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 transition hover:-translate-y-0.5 hover:border-zinc-700"
+        onclick="ProductService.GetProductById(${item.id})"
+        >
+        <div class="relative">
+          <span
+            class="absolute left-3 top-3 rounded-full bg-purple-600 px-2.5 py-1 text-xs font-semibold text-white">New</span>
+          <img
+            src="https://www.hoopsheaven.com.au/cdn/shop/files/AURORA_DO9530-508_PHSFH001-2000_3024x.png?v=1693381566"
+            alt="LeBron Statement Jersey — LA #23"
+            class="mx-auto h-48 w-full object-contain transition duration-300 group-hover:scale-[1.03]">
+        </div>
+        <div class="mt-4">
+          <h3 class="text-sm font-semibold">${item.name}</h3>
+          <p class="mt-1 text-sm text-zinc-400">${item.category_name}</p>
+          <p class="mt-2 text-base font-bold">$${item.price}</p>
+        </div>
+        <a href="#view_item"
+          class="mt-4 inline-flex w-full items-center justify-center rounded-xl border border-zinc-800 bg-black px-4 py-2.5 text-sm font-semibold text-zinc-100 hover:border-zinc-700">
+          View
+        </a>
+      </article>
+                    `
+        }
+      })
+  }
+}

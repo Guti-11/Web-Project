@@ -14,18 +14,9 @@ class ProductDao extends BaseDao
     public function getProductDetails()
     {
         $sql = "
-        SELECT 
-            category.id AS category_id,
-            category.category_name AS category_name,
-            products.id AS product_id,
-            products.name AS product_name,
-            product_details.id AS product_details_id,
-            product_details.colors AS product_details_colors,
-            product_details.sizes AS product_details_sizes,
-            product_details.models AS product_details_models
-        FROM category
-        INNER JOIN products ON category.id = products.id
-        INNER JOIN product_details ON products.id = product_details.product_id
+        SELECT * FROM products p
+        JOIN category c on p.category_id = c.id
+        JOIN product_details pd ON p.id = pd.product_id;
     ";
 
         $stmt = $this->connection->prepare($sql);
@@ -39,25 +30,18 @@ class ProductDao extends BaseDao
     public function getProductById($product_id)
     {
         $sql = "
-        SELECT 
-            category.id AS category_id,
-            category.category_name AS category_name,
-            products.id AS product_id,
-            products.name AS product_name,
-            product_details.id AS product_details_id,
-            product_details.colors AS product_details_colors,
-            product_details.sizes AS product_details_sizes,
-            product_details.models AS product_details_models
-        FROM products
-        INNER JOIN product_details ON products.id = product_details.product_id
-        INNER JOIN category ON category.id = products.id
-        WHERE products.id = :product_id
+        SELECT
+            *
+        FROM products p
+      JOIN category c on p.category_id = c.id
+        JOIN product_details pd ON p.id = pd.product_id
+        WHERE p.id = :product_id
     ";
 
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+        $stmt->bindParam(':product_id', $product_id);
         $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch();
 
         return $result;
     }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>LeBron's Legacy</title>
@@ -7,7 +8,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
 
   <!-- Bootstrap (unchanged) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,11 +21,16 @@
   <style>
     :root {
       /* ring color tuned for purple */
-      --ring: rgba(147, 51, 234, 0.25); /* ~purple-600 */
+      --ring: rgba(147, 51, 234, 0.25);
+      /* ~purple-600 */
     }
-    img { image-rendering: auto; }
+
+    img {
+      image-rendering: auto;
+    }
   </style>
 </head>
+
 <body class="font-inter bg-black text-zinc-100 antialiased">
 
   <!-- Subtle purple glow background -->
@@ -36,17 +44,16 @@
 
       <nav class="hidden w-full md:block">
         <ul class="flex items-center justify-center gap-4 font-semibold text-zinc-200">
-          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-400 transition" href="#view_main">Home</a></li>
-          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-400 transition" href="#view_shop">Shop</a></li>
-          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-400 transition" href="#view_basketballs">Basketballs</a></li>
-          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-400 transition" href="#view_jerseys">Jerseys</a></li>
-          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-400 transition" href="#view_apparel">Apparel</a></li>
-          
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-400 transition"
+              href="#view_main">Home</a></li>
+          <li><a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-400 transition"
+              href="#view_shop">Shop</a></li>
         </ul>
       </nav>
 
       <p class="font-semibold">
-        <a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-400 transition" href="#view_login">
+        <a class="border-b-2 border-transparent pb-1 hover:border-brand-500 hover:text-brand-400 transition"
+          href="#view_login">
           Login
         </a>
       </p>
@@ -77,6 +84,10 @@
     </div>
   </footer>
 
+
+
+  <script src="./js/ProductService.js"></script>
+
   <!-- Scripts (kept as-is; fixed a stray quote on custom.js) -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-..." crossorigin="anonymous"></script>
   <script src="./js/itemview.js"></script>
@@ -87,4 +98,5 @@
   <script src="./js/tailwindconfig.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
